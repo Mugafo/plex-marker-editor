@@ -1,0 +1,12 @@
+{
+  "name": "plex-marker-editor",
+  "private": true,
+  "workspaces": ["api", "frontend"],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev -w api\" \"npm run dev -w frontend\"",
+    "build": "npm run build -w api && npm run build -w frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
